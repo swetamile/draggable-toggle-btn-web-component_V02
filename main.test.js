@@ -1,12 +1,9 @@
-﻿import ToggleDragModule from './main.js';
+﻿import ToggleButtonModule from './main.js';
 
-let myBaseElement = new ToggleDragModule();
+let myBaseElement = new ToggleButtonModule();
 
 document.body.appendChild(myBaseElement);
 
-/**
- *  Tests
- */
 describe('Basic Element functionality', () => {
   test('Check if component status is connected', () => {
     expect(myBaseElement.status).toBe('connected');
@@ -18,16 +15,16 @@ describe('Basic Element functionality', () => {
 
   test('Test tag name', () => {
     expect(myBaseElement.tagName).toBe(
-      ToggleDragModule.elementName.toUpperCase()
+      ToggleButtonModule.elementName.toUpperCase()
     );
   });
 
   test('Test outerHTML matches', () => {
     expect(myBaseElement.outerHTML).toBe(
       '<' +
-        ToggleDragModule.elementName +
+        ToggleButtonModule.elementName +
         '></' +
-        ToggleDragModule.elementName +
+        ToggleButtonModule.elementName +
         '>'
     );
   });
@@ -49,11 +46,20 @@ describe('Element events', () => {
   test('onMouseUp event', () => {
     myBaseElement.onMouseUp();
   });
+
   test('onMouseMove event', () => {
     const event = { x: 0 };
     myBaseElement.onMouseMove(event);
     event.x = 21;
     myBaseElement.onMouseMove(event);
+  });
+
+  test('onLeftClick event', () => {
+    myBaseElement.onLeftClick();
+  });
+
+  test('onRightClick event', () => {
+    myBaseElement.onRightClick();
   });
 
   test('connected event', () => {

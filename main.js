@@ -1,6 +1,6 @@
-﻿import ToggleDragTemplate from './js/template.js';
+﻿import ToggleButtonTemplate from './js/template.js';
 
-export default class ToggleDragModule extends HTMLElement {
+export default class ToggleButtonModule extends HTMLElement {
   static elementName = 'toggle-drag';
 
   #leftButtonWidth = 0;
@@ -48,7 +48,7 @@ export default class ToggleDragModule extends HTMLElement {
         new CustomEvent('connected', {
           bubbles: true,
           composed: true,
-          detail: { component: ToggleDragModule.elementName },
+          detail: { component: ToggleButtonModule.elementName },
         })
       );
 
@@ -84,17 +84,9 @@ export default class ToggleDragModule extends HTMLElement {
     this.#rightButtonStartPixel = this.#rightButton.getBoundingClientRect().x;
 
     this.setDefaultValue();
-
-    // console.error(
-    //   this.#leftButtonWidth,
-    //   this.#rightButtonWidth,
-    //   this.#leftButtonStartPixel,
-    //   this.#rightButtonStartPixel
-    // );
   }
 
   onMouseDown = (event) => {
-    // console.error(event.target);
     event.preventDefault();
 
     this.addEventListener('mousemove', this.onMouseMove);
@@ -149,8 +141,8 @@ export default class ToggleDragModule extends HTMLElement {
       this.shadow.removeChild(this.shadow.firstChild);
     }
 
-    const template = new ToggleDragTemplate(
-      ToggleDragModule.elementName,
+    const template = new ToggleButtonTemplate(
+      ToggleButtonModule.elementName,
       this
     ).get();
     this.shadow.appendChild(template.content.cloneNode(true));
@@ -170,11 +162,14 @@ export default class ToggleDragModule extends HTMLElement {
       new CustomEvent('disconnected', {
         bubbles: true,
         composed: true,
-        detail: { component: ToggleDragModule.elementName },
+        detail: { component: ToggleButtonModule.elementName },
       })
     );
     this.destroy && this.destroy();
   }
 }
 
-window.customElements.define(ToggleDragModule.elementName, ToggleDragModule);
+window.customElements.define(
+  ToggleButtonModule.elementName,
+  ToggleButtonModule
+);

@@ -1,4 +1,4 @@
-export default class ToggleDragTemplateController {
+export default class ToggleButtonTemplateController {
   constructor(name, element) {
     this.template = document.createElement('template');
     this.template.innerHTML = `

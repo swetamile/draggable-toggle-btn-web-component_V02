@@ -1,5 +1,5 @@
 {
-  "name": "ToggleDragModule",
+  "name": "ToggleDrag",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -33,7 +33,7 @@
       ]
     ]
   },
-  "author": "TVH",
+  "author": "ASA",
   "license": "ISC",
   "dependencies": {
     "@babel/preset-env": "^7.13.15",

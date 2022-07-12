@@ -1,9 +1,7 @@
 ﻿import ToggleDragModule from './main.js';
 
-// Create instance of the element
 let myBaseElement = new ToggleDragModule();
 
-// Append to body (to run connectedCallback)
 document.body.appendChild(myBaseElement);
 
 /**
@@ -44,6 +42,20 @@ describe('Element events', () => {
     myBaseElement.removeEventListener('disconnected', handler);
   });
 
+  test('onMouseDown event', () => {
+    myBaseElement.onMouseDown({ preventDefault: () => {} });
+  });
+
+  test('onMouseUp event', () => {
+    myBaseElement.onMouseUp();
+  });
+  test('onMouseMove event', () => {
+    const event = { x: 0 };
+    myBaseElement.onMouseMove(event);
+    event.x = 21;
+    myBaseElement.onMouseMove(event);
+  });
+
   test('connected event', () => {
     myBaseElement.status = 'created';
     const handler = jest.fn();
@@ -56,7 +68,9 @@ describe('Element events', () => {
 
 describe('Element attributes', () => {
   test('Set direction attribute', () => {
+    document.body.removeChild(myBaseElement);
     myBaseElement.direction = 'left';
+    document.body.appendChild(myBaseElement);
     expect(myBaseElement.getAttribute('direction')).toBe('left');
     myBaseElement.removeAttribute('direction');
 

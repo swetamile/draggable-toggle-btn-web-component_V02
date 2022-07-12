@@ -84,9 +84,17 @@ export default class ToggleDragModule extends HTMLElement {
     this.#rightButtonStartPixel = this.#rightButton.getBoundingClientRect().x;
 
     this.setDefaultValue();
+
+    // console.error(
+    //   this.#leftButtonWidth,
+    //   this.#rightButtonWidth,
+    //   this.#leftButtonStartPixel,
+    //   this.#rightButtonStartPixel
+    // );
   }
 
   onMouseDown = (event) => {
+    // console.error(event.target);
     event.preventDefault();
 
     this.addEventListener('mousemove', this.onMouseMove);

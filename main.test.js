@@ -54,6 +54,17 @@ describe('Element events', () => {
   });
 });
 
+describe('Element attributes', () => {
+  test('Set direction attribute', () => {
+    myBaseElement.direction = 'left';
+    expect(myBaseElement.getAttribute('direction')).toBe('left');
+    myBaseElement.removeAttribute('direction');
+
+    myBaseElement.direction = '';
+    expect(myBaseElement.getAttribute('direction')).toBe(null);
+  });
+});
+
 describe('Element attributes', () => {});
 
 describe('Element functionality', () => {});

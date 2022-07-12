@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657607449446" clover="3.2.0">
-  <project timestamp="1657607449446" name="All files">
-    <metrics statements="86" coveredstatements="65" conditionals="14" coveredconditionals="7" methods="21" coveredmethods="13" elements="121" coveredelements="85" complexity="0" loc="86" ncloc="86" packages="2" files="2" classes="2"/>
+<coverage generated="1657611900315" clover="3.2.0">
+  <project timestamp="1657611900315" name="All files">
+    <metrics statements="86" coveredstatements="68" conditionals="14" coveredconditionals="9" methods="21" coveredmethods="14" elements="121" coveredelements="91" complexity="0" loc="86" ncloc="86" packages="2" files="2" classes="2"/>
     <package name="toggle-drag">
-      <metrics statements="83" coveredstatements="62" conditionals="14" coveredconditionals="7" methods="19" coveredmethods="11"/>
+      <metrics statements="83" coveredstatements="65" conditionals="14" coveredconditionals="9" methods="19" coveredmethods="12"/>
       <file name="main.js" path="C:\Users\sso\OneDrive - Milestone Systems\Desktop\toggle-drag\main.js">
-        <metrics statements="83" coveredstatements="62" conditionals="14" coveredconditionals="7" methods="19" coveredmethods="11"/>
+        <metrics statements="83" coveredstatements="65" conditionals="14" coveredconditionals="9" methods="19" coveredmethods="12"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
@@ -21,9 +21,9 @@
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
         <line num="32" count="6" type="stmt"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
         <line num="44" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="45" count="2" type="stmt"/>
         <line num="47" count="2" type="stmt"/>

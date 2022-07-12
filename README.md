@@ -1,7 +1,9 @@
-# &lt;TAG_NAME&gt; element
+# &lt;toggle-drag&gt; element
 
 ## Purpose
-DESCRIBE THE COMPONENT
+
+The component is a button group that taggles between 'Playback' and 'Live' mode.
+
 ## Usage
 
 ### Script
@@ -15,18 +17,14 @@ Add it with stript tag
 ### Markup
 
 ```html
-<TAG-NAME></TAG-NAME>
+<toggle-drag direction="left"></toggle-drag>
 ```
 
 ## Attributes
 
-DESCRIBE THE ATTRIBUTES
+- `direction` set the position of the toggle part of the button;
 
 ## Events
-DESCRIBE THE EVENTS
-
-## Customizable styles
-DESCRIBE THE CSS VARIABLES
 
 ## Unit testing
 

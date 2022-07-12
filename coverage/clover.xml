@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657632994157" clover="3.2.0">
-  <project timestamp="1657632994157" name="All files">
+<coverage generated="1657634652123" clover="3.2.0">
+  <project timestamp="1657634652123" name="All files">
     <metrics statements="86" coveredstatements="85" conditionals="14" coveredconditionals="13" methods="21" coveredmethods="21" elements="121" coveredelements="119" complexity="0" loc="86" ncloc="86" packages="2" files="2" classes="2"/>
     <package name="toggle-drag">
       <metrics statements="83" coveredstatements="82" conditionals="14" coveredconditionals="13" methods="19" coveredmethods="19"/>

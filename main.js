@@ -1,7 +1,7 @@
 ﻿import ToggleButtonTemplate from './js/template.js';
 
 export default class ToggleButtonModule extends HTMLElement {
-  static elementName = 'toggle-drag';
+  static elementName = 'toggle-button';
 
   #leftButtonWidth = 0;
   #rightButtonWidth = 0;

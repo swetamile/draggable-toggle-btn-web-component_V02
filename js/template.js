@@ -19,12 +19,11 @@ export default class ToggleButtonTemplateController {
             
             .toggle-btn {
                 background: transparent;
-                color: var(--toggle-drag-neutral-white-a06-text, rgba(255, 255, 255, 0.6));
+                color: var(--toggle-drag-neutral-white-a06-text, hsla(360, 100%, 100%, 1));
                 text-align: center;
                 cursor: pointer;
                 padding: 4px 12px;
                 font-family: 'Open Sans';
-                font-style: normal;
                 font-weight: 600;
                 font-size: 12px;
                 line-height: 16px;

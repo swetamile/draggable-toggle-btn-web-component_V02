@@ -1,4 +1,4 @@
-# &lt;toggle-drag&gt; element
+# &lt;toggle-button&gt; element
 
 ## Purpose
 
@@ -17,12 +17,12 @@ Add it with stript tag
 ### Markup
 
 ```html
-<toggle-drag direction="left"></toggle-drag>
+<toggle-button direction="left"></toggle-button>
 ```
 
 ## Attributes
 
-- `direction` set the position of the toggle part of the button;
+- `direction` set the position (left or right) of the toggle part of the button;
 
 ## Events
 

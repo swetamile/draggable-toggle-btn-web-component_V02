@@ -14,12 +14,12 @@ export default class ToggleButtonTemplateController {
                 align-items: center;
                 justify-content: center;
                 border-radius: 100px;
-                background: var(--toggle-drag-neutral-background-color-container, rgba(50, 62, 67, 1));
+                background: var(--toggle-drag-neutral-background-color-container, hsla(197, 14%, 22%, 1));
             }
             
             .toggle-btn {
                 background: transparent;
-                color: var(--toggle-drag-neutral-white-a06-text, hsla(360, 100%, 100%, 1));
+                color: var(--toggle-drag-neutral-gray-a06-text, hsla(0, 0%, 75%, 1));
                 text-align: center;
                 cursor: pointer;
                 padding: 4px 12px;
@@ -34,26 +34,26 @@ export default class ToggleButtonTemplateController {
                 position: absolute;
                 top: 0;
                 height: 100%;
-                background: var(--toggle-drag-primary-selected-toggle-btn, rgba(0, 118, 168, 1));
+                background: var(--toggle-drag-primary-selected-toggle-btn, hsla(197, 100%, 32%, 1));
                 border-radius: 100px;
                 cursor: pointer;
                 transition: .5s;
             }
 
             :host([direction=left]) .leftButton {
-                color: var(--toggle-drag-neutral-white-text, rgba(255, 255, 255, 1));
+                color: var(--toggle-drag-neutral-white-text, hsla(0, 0%, 100%, 1));
             } 
 
             :host([direction=right]) .rightButton {
-                color: var(--toggle-drag-neutral-white-text, rgba(255, 255, 255, 1));
+                color: var(--toggle-drag-neutral-white-text, hsla(0, 0%, 100%, 1));
             } 
 
             .leftButton:hover {
-                color: var(--toggle-drag-neutral-white-text, rgba(255, 255, 255, 1));
+                color: var(--toggle-drag-neutral-white-text, hsla(0, 0%, 100%, 1));
             }
 
             .rightButton:hover {
-                color: var(--toggle-drag-neutral-white-text, rgba(255, 255, 255, 1));
+                color: var(--toggle-drag-neutral-white-text, hsla(0, 0%, 100%, 1));
             }
         </style>
         <div class="shadowWrapper" >

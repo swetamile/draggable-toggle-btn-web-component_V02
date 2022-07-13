@@ -9,7 +9,7 @@ export default class ToggleButtonModule extends HTMLElement {
   #rightButtonStartPixel = 0;
   #leftDirection = 'left';
   #rightDirection = 'right';
-  #defaultRightButtonLeft = '0px';
+  defaultRightButtonLeft = '0px';
   #leftButton;
   #rightButton;
   #btn;
@@ -82,13 +82,11 @@ export default class ToggleButtonModule extends HTMLElement {
     this.#rightButtonWidth = this.#rightButton.getBoundingClientRect().width;
     this.#leftButtonStartPixel = this.#leftButton.getBoundingClientRect().x;
     this.#rightButtonStartPixel = this.#rightButton.getBoundingClientRect().x;
-
     this.setDefaultValue();
   }
 
   onMouseDown = (event) => {
     event.preventDefault();
-
     this.addEventListener('mousemove', this.onMouseMove);
     window.addEventListener('mouseup', this.onMouseUp);
   };
@@ -127,7 +125,7 @@ export default class ToggleButtonModule extends HTMLElement {
     this.#btn.style.width = `${
       this.#rightButtonStartPixel - this.#leftButtonStartPixel
     }px`;
-    this.#btn.style.left = this.#defaultRightButtonLeft;
+    this.#btn.style.left = this.defaultRightButtonLeft;
   };
 
   navigateToggleToRight = () => {
@@ -149,6 +147,10 @@ export default class ToggleButtonModule extends HTMLElement {
   };
 
   destroy = () => {
+    this.#leftButton = null;
+    this.#rightButton = null;
+    this.#btn = null;
+
     this.status = 'destroyed';
     this.#leftButton.removeEventListener('click', this.onLeftClick);
     this.#rightButton.removeEventListener('click', this.onRightClick);

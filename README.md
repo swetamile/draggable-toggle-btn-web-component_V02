@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The component is a button group that taggles between 'Playback' and 'Live' mode.
+The component is a button group that toggles between 'Playback' and 'Live' mode.
 
 ## Usage
 

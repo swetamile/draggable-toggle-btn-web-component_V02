@@ -7,12 +7,10 @@ export default class ToggleButtonModule extends HTMLElement {
   #rightButtonWidth = 0;
   #leftButtonStartPixel = 0;
   #rightButtonStartPixel = 0;
-  #leftDirection = 'left';
-  #rightDirection = 'right';
-  defaultRightButtonLeft = '0px';
   #leftButton;
   #rightButton;
   #btn;
+  defaultRightButtonLeft = '0px';
   strings = {
     timelinePlaybackLive: {
       playback: 'PLAYBACK',
@@ -28,16 +26,15 @@ export default class ToggleButtonModule extends HTMLElement {
     this.status = 'created';
   }
 
-  get direction() {
-    return this.getAttribute('direction');
+  get leftDirection() {
+    if (this.hasAttribute('leftDirection')) {
+      return this.getAttribute('leftDirection') === 'true';
+    }
+    return true;
   }
 
-  set direction(value) {
-    if (value) {
-      this.setAttribute('direction', value);
-    } else {
-      this.removeAttribute('direction');
-    }
+  set leftDirection(value) {
+    this.setAttribute('leftDirection', value);
   }
 
   connectedCallback() {
@@ -105,9 +102,9 @@ export default class ToggleButtonModule extends HTMLElement {
   };
 
   setDefaultValue = () => {
-    if (this.direction === this.#leftDirection) {
+    if (this.leftDirection) {
       this.navigateToggleToLeft();
-    } else if (this.direction === this.#rightDirection) {
+    } else {
       this.navigateToggleToRight();
     }
   };
@@ -121,7 +118,7 @@ export default class ToggleButtonModule extends HTMLElement {
   };
 
   navigateToggleToLeft = () => {
-    this.direction = this.#leftDirection;
+    this.leftDirection = true;
     this.#btn.style.width = `${
       this.#rightButtonStartPixel - this.#leftButtonStartPixel
     }px`;
@@ -129,7 +126,7 @@ export default class ToggleButtonModule extends HTMLElement {
   };
 
   navigateToggleToRight = () => {
-    this.direction = this.#rightDirection;
+    this.leftDirection = false;
     this.#btn.style.width = `${this.#rightButtonWidth}px`;
     this.#btn.style.left = `${this.#leftButtonWidth}px`;
   };
@@ -147,15 +144,19 @@ export default class ToggleButtonModule extends HTMLElement {
   };
 
   destroy = () => {
+    this.status = 'destroyed';
+    if (this.#leftButton) {
+      this.#leftButton.removeEventListener('click', this.onLeftClick);
+      this.#leftButton.removeEventListener('mousedown', this.onMouseDown);
+    }
+    if (this.#rightButton) {
+      this.#rightButton.removeEventListener('click', this.onRightClick);
+      this.#rightButton.removeEventListener('mousedown', this.onMouseDown);
+    }
+
     this.#leftButton = null;
     this.#rightButton = null;
     this.#btn = null;
-
-    this.status = 'destroyed';
-    this.#leftButton.removeEventListener('click', this.onLeftClick);
-    this.#rightButton.removeEventListener('click', this.onRightClick);
-    this.#leftButton.removeEventListener('mousedown', this.onMouseDown);
-    this.#rightButton.removeEventListener('mousedown', this.onMouseDown);
   };
 
   disconnectedCallback() {

@@ -23,10 +23,24 @@ describe('Basic Element functionality', () => {
     expect(myBaseElement.outerHTML).toBe(
       '<' +
         ToggleButtonModule.elementName +
-        '></' +
+        ' leftdirection="true"></' +
         ToggleButtonModule.elementName +
         '>'
     );
+  });
+});
+
+describe('Element attributes', () => {
+  test('Default leftDirection attribute', () => {
+    myBaseElement.leftDirection = true;
+    expect(myBaseElement.leftDirection).toBe(true);
+  });
+
+  test('Set leftDirection', () => {
+    myBaseElement.leftDirection = true;
+    expect(myBaseElement.leftDirection).toBe(true);
+    myBaseElement.leftDirection = false;
+    expect(myBaseElement.leftDirection).toBe(false);
   });
 });
 
@@ -37,6 +51,15 @@ describe('Element events', () => {
     document.body.removeChild(myBaseElement);
     expect(handler).toBeCalledTimes(1);
     myBaseElement.removeEventListener('disconnected', handler);
+  });
+
+  test('connected event', () => {
+    myBaseElement.status = 'created';
+    const handler = jest.fn();
+    myBaseElement.addEventListener('connected', handler);
+    document.body.appendChild(myBaseElement);
+    expect(handler).toBeCalledTimes(1);
+    myBaseElement.removeEventListener('connected', handler);
   });
 
   test('onMouseDown event', () => {
@@ -60,28 +83,6 @@ describe('Element events', () => {
 
   test('onRightClick event', () => {
     myBaseElement.onRightClick();
-  });
-
-  test('connected event', () => {
-    myBaseElement.status = 'created';
-    const handler = jest.fn();
-    myBaseElement.addEventListener('connected', handler);
-    document.body.appendChild(myBaseElement);
-    expect(handler).toBeCalledTimes(1);
-    myBaseElement.removeEventListener('connected', handler);
-  });
-});
-
-describe('Element attributes', () => {
-  test('Set direction attribute', () => {
-    document.body.removeChild(myBaseElement);
-    myBaseElement.direction = 'left';
-    document.body.appendChild(myBaseElement);
-    expect(myBaseElement.getAttribute('direction')).toBe('left');
-    myBaseElement.removeAttribute('direction');
-
-    myBaseElement.direction = '';
-    expect(myBaseElement.getAttribute('direction')).toBe(null);
   });
 });
 
